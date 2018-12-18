@@ -13116,18 +13116,33 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Analysis-of-the-Italian-vehicles">Analysis of the Italian vehicles<a class="anchor-link" href="#Analysis-of-the-Italian-vehicles">&#182;</a></h1><h2 id="From-a-green-point-of-view">From a green point of view<a class="anchor-link" href="#From-a-green-point-of-view">&#182;</a></h2><h3 id="Let's-meet-the-data">Let's meet the data<a class="anchor-link" href="#Let's-meet-the-data">&#182;</a></h3><p>Brief introduction about the dataset [TODO]</p>
-<h3 id="Questions">Questions<a class="anchor-link" href="#Questions">&#182;</a></h3><ul>
-<li>How is the current situation of the vehicles from an emission and pollution point of view?</li>
-<li>Which region has more vehicles per person?</li>
+<h1 id="Analysis-of-the-Italian-vehicles">Analysis of the Italian vehicles<a class="anchor-link" href="#Analysis-of-the-Italian-vehicles">&#182;</a></h1><h2 id="From-a-green-point-of-view">From a green point of view<a class="anchor-link" href="#From-a-green-point-of-view">&#182;</a></h2><hr>
+<h3 id="The-sources">The sources<a class="anchor-link" href="#The-sources">&#182;</a></h3><p>The <a href="http://dati.mit.gov.it/catalog/dataset/60a57c60-758c-4bd9-8d87-c286b797c289">dataset</a> comes from the the official Italian Ministero delle Infrastrutture e dei Trasporti and its last update was on the <strong>31/10/2017</strong> and keeps track of all the <strong>52.165.189</strong> vehicles owned by Italians and that are authorized to be driven.</p>
+<p>The data about the population has been downloaded from <a href="http://www.demo.istat.it/pop2018/index3.html">Istat</a>, the italian institution that monitors the population, and were updated to the <strong>01/01/2018</strong>, closest date to the one of the dataset.</p>
+<h3 id="Meet-the-data">Meet the data<a class="anchor-link" href="#Meet-the-data">&#182;</a></h3><p>The dataset includes all the italian vehicles that are currently registered and authorized to be driven.</p>
+<p>It tells lots of useful informations about the owner of the vehicle, its use, some characteristics like brand, kind of engine, emissions and other less relevant informations.</p>
+<p>The idea was to study, knowing all the registered and allowed vehicles, the trends we're following respect to the demands of environmental challenges.
+In particular I focused on the class of emissions and the type of fuel used, the easiest indicators that can address also the less informed customer into making the buying choice.</p>
+<h3 id="Questions">Questions<a class="anchor-link" href="#Questions">&#182;</a></h3><p>The dataset is very vast and can answer, if properly analysed, many interesting questions.
+Here are my first two, they are not complex but they are a good starting poing to start knowing better this dataset.</p>
+<ul>
+<li>Keeping into account the characteristics I wanted to analyse (euro class and fuel type), which is the current state of the vehicles in Italy? Which are the trends?</li>
+<li>Since notoriously Italy is very differentiated from region to region, is the vehicle distribution similar across the whole Country?</li>
 </ul>
-<h3 id="Answer-1">Answer 1<a class="anchor-link" href="#Answer-1">&#182;</a></h3><p><img src="./snapshot.svg" alt="Cap 1"></p>
-<h3 id="Answer-2">Answer 2<a class="anchor-link" href="#Answer-2">&#182;</a></h3><p><img src="./regions.svg" alt="Cap 1"></p>
+<h3 id="1st-answer---A-snapshot-of-the-current-trends">1st answer - A snapshot of the current trends<a class="anchor-link" href="#1st-answer---A-snapshot-of-the-current-trends">&#182;</a></h3><p>Here we can have a look to some characteristics of the registered cars currently circulating, organized in a yearly fashion. It's possible to notice some trands and interesting relationship, also some outliers.</p>
+<p><img src="./snapshot.svg" alt="Registration of the vehicles made in the last 25 years"></p>
+<h3 id="2nd-answer---The-habits-of-each-region">2nd answer - The habits of each region<a class="anchor-link" href="#2nd-answer---The-habits-of-each-region">&#182;</a></h3><p>All the following data have been normalized by the number of the people living in each region (regardless of the age). There are some surprising outcomes and some possible answers.</p>
+<p><img src="./regions.svg" alt="Vehicles per region, normalized by population"></p>
+<h3 id="How-it-was-made">How it was made<a class="anchor-link" href="#How-it-was-made">&#182;</a></h3><p>The dataset has been put in a <strong>sqlite3</strong> database to be easier and (<em>hopefully</em>) more efficient in being queried.
+I have worked on a <em>randomly</em> undersampled dataset to make the exploratory part faster and proficient.</p>
+<p>All the plots have been produced with <strong>matplotlib</strong>, sometimes also relying on <strong>seaborn</strong> and <strong>pandas</strong>.</p>
+<h3 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h3><p>Since the dataset is vast and difficult to collect otherwise, it suggest many questions just going though the exploratory part.
+Correlating with many other data could reveal more about the choices and tastes of the people anonimously involved.</p>
+<p>A side technical note: for data with this high dimensionality, an interactive plotting would have been a better choice.</p>
 
 </div>
 </div>
 </div>
-
     </div>
   </div>
 </body>
