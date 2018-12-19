@@ -10421,7 +10421,6 @@ div.cell {
   border-style: solid;
   border-color: transparent;
   width: 100%;
-  padding: 5px;
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
@@ -11322,7 +11321,6 @@ div.text_cell_render {
   resize: none;
   width: inherit;
   border-style: none;
-  padding: 0.5em 0.5em 0.5em 0.4em;
   color: #000;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -11431,7 +11429,6 @@ div#notebook {
 }
 @media not print {
   #notebook-container {
-    padding: 15px;
     background-color: #fff;
     min-height: 0;
     -webkit-box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
@@ -12945,6 +12942,19 @@ ul.typeahead-list  > li > a.pull-right {
   margin-top: 20px;
 }
 /*# sourceMappingURL=style.min.css.map */
+
+    .padded_image {
+        padding-right: 5rem;
+    }
+
+    .padded_text {
+        padding: 6rem 10rem 6rem 12rem;
+    }
+
+    p {
+        text-align: justify !important;
+    }
+
     </style>
 <style type="text/css">
     .highlight .hll { background-color: #ffffcc }
@@ -13113,9 +13123,12 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+
+    <div class="padded_text">
+
 <h1 id="Analysis-of-the-Italian-vehicles">Analysis of the Italian vehicles<a class="anchor-link" href="#Analysis-of-the-Italian-vehicles">&#182;</a></h1><h2 id="From-a-green-point-of-view">From a green point of view<a class="anchor-link" href="#From-a-green-point-of-view">&#182;</a></h2><hr>
 <h3 id="The-sources">The sources<a class="anchor-link" href="#The-sources">&#182;</a></h3><p>The <a href="http://dati.mit.gov.it/catalog/dataset/60a57c60-758c-4bd9-8d87-c286b797c289">dataset</a> comes from the the official Italian Ministero delle Infrastrutture e dei Trasporti and its last update was on the <strong>31/10/2017</strong> and keeps track of all the <strong>52.165.189</strong> vehicles owned by Italians and that are authorized to be driven.</p>
 <p>The data about the population has been downloaded from <a href="http://www.demo.istat.it/pop2018/index3.html">Istat</a>, the italian institution that monitors the population, and were updated to the <strong>01/01/2018</strong>, closest date to the one of the dataset.</p>
@@ -13130,15 +13143,25 @@ Here are my first two, they are not complex but they are a good starting poing t
 <li>Since notoriously Italy is very differentiated from region to region, is the vehicle distribution similar across the whole Country?</li>
 </ul>
 <h3 id="1st-answer---A-snapshot-of-the-current-trends">1st answer - A snapshot of the current trends<a class="anchor-link" href="#1st-answer---A-snapshot-of-the-current-trends">&#182;</a></h3><p>Here we can have a look to some characteristics of the registered cars currently circulating, organized in a yearly fashion. It's possible to notice some trands and interesting relationship, also some outliers.</p>
-<p><img src="./snapshot.svg" alt="Registration of the vehicles made in the last 25 years"></p>
+
+    </div>
+    <div class="padded_image"><img src="./snapshot.svg" alt="Registration of the vehicles made in the last 25 years"></div>
+    <div class="padded_text">
+
 <h3 id="2nd-answer---The-habits-of-each-region">2nd answer - The habits of each region<a class="anchor-link" href="#2nd-answer---The-habits-of-each-region">&#182;</a></h3><p>All the following data have been normalized by the number of the people living in each region (regardless of the age). There are some surprising outcomes and some possible answers.</p>
-<p><img src="./regions.svg" alt="Vehicles per region, normalized by population"></p>
+
+    </div>
+    <div class="padded_image"><img src="./regions.svg" alt="Vehicles per region, normalized by population"></div>
+    <div class="padded_text">
+
 <h3 id="How-it-was-made">How it was made<a class="anchor-link" href="#How-it-was-made">&#182;</a></h3><p>The dataset has been put in a <strong>sqlite3</strong> database to be easier and (<em>hopefully</em>) more efficient in being queried.
 I have worked on a <em>randomly</em> undersampled dataset to make the exploratory part faster and proficient.</p>
 <p>All the plots have been produced with <strong>matplotlib</strong>, sometimes also relying on <strong>seaborn</strong> and <strong>pandas</strong>.</p>
 <h3 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h3><p>Since the dataset is vast and difficult to collect otherwise, it suggest many questions just going though the exploratory part.
 Correlating with many other data could reveal more about the choices and tastes of the people anonimously involved.</p>
 <p>A side technical note: for data with this high dimensionality, an interactive plotting would have been a better choice.</p>
+
+    </div>
 
 </div>
 </div>
